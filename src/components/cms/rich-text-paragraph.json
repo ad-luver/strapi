@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_cms_rich_text_paragraphs",
+  "info": {
+    "displayName": "RichTextParagraph"
+  },
+  "options": {},
+  "attributes": {
+    "value": {
+      "type": "blocks",
+      "required": true
+    }
+  },
+  "config": {}
+}

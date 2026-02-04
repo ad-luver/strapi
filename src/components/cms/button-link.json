@@ -1,0 +1,42 @@
+{
+  "collectionName": "components_cms_button_links",
+  "info": {
+    "displayName": "ButtonLink"
+  },
+  "options": {},
+  "attributes": {
+    "value": {
+      "type": "string",
+      "required": true
+    },
+    "variant": {
+      "type": "enumeration",
+      "required": true,
+      "default": "default",
+      "enum": [
+        "default",
+        "secondary",
+        "outline",
+        "ghost",
+        "link",
+        "destructive"
+      ]
+    },
+    "size": {
+      "type": "enumeration",
+      "required": true,
+      "default": "default",
+      "enum": [
+        "default",
+        "sm",
+        "lg"
+      ]
+    },
+    "href": {
+      "type": "string",
+      "minLength": 1,
+      "required": true
+    }
+  },
+  "config": {}
+}
