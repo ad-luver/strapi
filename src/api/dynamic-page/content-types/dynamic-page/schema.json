@@ -36,7 +36,8 @@
         "cms.paragraph",
         "cms.image",
         "cms.button-link",
-        "cms.alert"
+        "cms.alert",
+        "cms.avatar"
       ],
       "required": true
     }

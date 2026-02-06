@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_cms_avatars",
+  "info": {
+    "displayName": "Avatar"
+  },
+  "options": {},
+  "attributes": {
+    "src": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
+    "fallback": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "config": {}
+}

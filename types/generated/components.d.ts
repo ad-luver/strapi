@@ -14,6 +14,17 @@ export interface CmsAlert extends Struct.ComponentSchema {
   };
 }
 
+export interface CmsAvatar extends Struct.ComponentSchema {
+  collectionName: 'components_cms_avatars';
+  info: {
+    displayName: 'Avatar';
+  };
+  attributes: {
+    fallback: Schema.Attribute.String & Schema.Attribute.Required;
+    src: Schema.Attribute.Media<'images' | 'files'> & Schema.Attribute.Required;
+  };
+}
+
 export interface CmsButtonLink extends Struct.ComponentSchema {
   collectionName: 'components_cms_button_links';
   info: {
@@ -72,6 +83,7 @@ declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
       'cms.alert': CmsAlert;
+      'cms.avatar': CmsAvatar;
       'cms.button-link': CmsButtonLink;
       'cms.image': CmsImage;
       'cms.paragraph': CmsParagraph;
