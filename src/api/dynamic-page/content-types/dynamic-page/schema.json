@@ -35,7 +35,8 @@
         "cms.rich-text-paragraph",
         "cms.paragraph",
         "cms.image",
-        "cms.button-link"
+        "cms.button-link",
+        "cms.alert"
       ],
       "required": true
     }
