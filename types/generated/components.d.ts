@@ -1,5 +1,19 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface CmsAlert extends Struct.ComponentSchema {
+  collectionName: 'components_cms_alerts';
+  info: {
+    displayName: 'Alert';
+  };
+  attributes: {
+    description: Schema.Attribute.Text & Schema.Attribute.Required;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+    variant: Schema.Attribute.Enumeration<['default', 'destructive']> &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'default'>;
+  };
+}
+
 export interface CmsButtonLink extends Struct.ComponentSchema {
   collectionName: 'components_cms_button_links';
   info: {
@@ -57,6 +71,7 @@ export interface CmsRichTextParagraph extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'cms.alert': CmsAlert;
       'cms.button-link': CmsButtonLink;
       'cms.image': CmsImage;
       'cms.paragraph': CmsParagraph;

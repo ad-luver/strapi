@@ -455,6 +455,7 @@ export interface ApiDynamicPageDynamicPage extends Struct.CollectionTypeSchema {
         'cms.paragraph',
         'cms.image',
         'cms.button-link',
+        'cms.alert',
       ]
     > &
       Schema.Attribute.Required &

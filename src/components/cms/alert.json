@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_cms_alerts",
+  "info": {
+    "displayName": "Alert"
+  },
+  "options": {},
+  "attributes": {
+    "variant": {
+      "type": "enumeration",
+      "required": true,
+      "default": "default",
+      "enum": [
+        "default",
+        "destructive"
+      ]
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    }
+  },
+  "config": {}
+}
