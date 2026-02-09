@@ -40,6 +40,30 @@ export interface CmsBadge extends Struct.ComponentSchema {
   };
 }
 
+export interface CmsBreadcrumb extends Struct.ComponentSchema {
+  collectionName: 'components_cms_breadcrumbs';
+  info: {
+    displayName: 'Breadcrumb';
+  };
+  attributes: {
+    maxLengthBeforeCollapse: Schema.Attribute.Integer &
+      Schema.Attribute.Required;
+    paths: Schema.Attribute.Component<'cms.breadcrumb-path', true> &
+      Schema.Attribute.Required;
+  };
+}
+
+export interface CmsBreadcrumbPath extends Struct.ComponentSchema {
+  collectionName: 'components_cms_breadcrumb_paths';
+  info: {
+    displayName: 'BreadcrumbPath';
+  };
+  attributes: {
+    name: Schema.Attribute.String & Schema.Attribute.Required;
+    to: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
 export interface CmsButtonLink extends Struct.ComponentSchema {
   collectionName: 'components_cms_button_links';
   info: {
@@ -100,6 +124,8 @@ declare module '@strapi/strapi' {
       'cms.alert': CmsAlert;
       'cms.avatar': CmsAvatar;
       'cms.badge': CmsBadge;
+      'cms.breadcrumb': CmsBreadcrumb;
+      'cms.breadcrumb-path': CmsBreadcrumbPath;
       'cms.button-link': CmsButtonLink;
       'cms.image': CmsImage;
       'cms.paragraph': CmsParagraph;
