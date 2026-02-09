@@ -25,6 +25,21 @@ export interface CmsAvatar extends Struct.ComponentSchema {
   };
 }
 
+export interface CmsBadge extends Struct.ComponentSchema {
+  collectionName: 'components_cms_badges';
+  info: {
+    displayName: 'Badge';
+  };
+  attributes: {
+    text: Schema.Attribute.String & Schema.Attribute.Required;
+    variant: Schema.Attribute.Enumeration<
+      ['default', 'secondary', 'destructive', 'outline']
+    > &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'default'>;
+  };
+}
+
 export interface CmsButtonLink extends Struct.ComponentSchema {
   collectionName: 'components_cms_button_links';
   info: {
@@ -84,6 +99,7 @@ declare module '@strapi/strapi' {
     export interface ComponentSchemas {
       'cms.alert': CmsAlert;
       'cms.avatar': CmsAvatar;
+      'cms.badge': CmsBadge;
       'cms.button-link': CmsButtonLink;
       'cms.image': CmsImage;
       'cms.paragraph': CmsParagraph;
