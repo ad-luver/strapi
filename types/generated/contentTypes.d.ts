@@ -485,6 +485,45 @@ export interface ApiDynamicPageDynamicPage extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiPrivateSimplePagePrivateSimplePage
+  extends Struct.SingleTypeSchema {
+  collectionName: 'private_simple_pages';
+  info: {
+    displayName: 'PrivateSimplePage';
+    pluralName: 'private-simple-pages';
+    singularName: 'private-simple-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::private-simple-page.private-simple-page'
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    text: Schema.Attribute.Text &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface PluginContentReleasesRelease
   extends Struct.CollectionTypeSchema {
   collectionName: 'strapi_releases';
@@ -996,6 +1035,7 @@ declare module '@strapi/strapi' {
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
       'api::dynamic-page.dynamic-page': ApiDynamicPageDynamicPage;
+      'api::private-simple-page.private-simple-page': ApiPrivateSimplePagePrivateSimplePage;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;
