@@ -1,0 +1,28 @@
+{
+  "kind": "singleType",
+  "collectionName": "private_simple_pages",
+  "info": {
+    "singularName": "private-simple-page",
+    "pluralName": "private-simple-pages",
+    "displayName": "PrivateSimplePage"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "text": {
+      "type": "text",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "required": true
+    }
+  }
+}
