@@ -37,7 +37,8 @@
         "cms.image",
         "cms.button-link",
         "cms.alert",
-        "cms.avatar"
+        "cms.avatar",
+        "cms.badge"
       ],
       "required": true
     }
