@@ -38,7 +38,8 @@
         "cms.button-link",
         "cms.alert",
         "cms.avatar",
-        "cms.badge"
+        "cms.badge",
+        "cms.breadcrumb"
       ],
       "required": true
     }

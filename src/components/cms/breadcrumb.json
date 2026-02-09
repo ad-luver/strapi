@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_cms_breadcrumbs",
+  "info": {
+    "displayName": "Breadcrumb"
+  },
+  "options": {},
+  "attributes": {
+    "paths": {
+      "type": "component",
+      "component": "cms.breadcrumb-path",
+      "repeatable": true,
+      "required": true
+    },
+    "maxLengthBeforeCollapse": {
+      "type": "integer",
+      "required": true,
+      "default": 2
+    }
+  },
+  "config": {}
+}

@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_cms_breadcrumb_paths",
+  "info": {
+    "displayName": "BreadcrumbPath"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "to": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "config": {}
+}
