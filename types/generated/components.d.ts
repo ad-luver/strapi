@@ -47,7 +47,8 @@ export interface CmsBreadcrumb extends Struct.ComponentSchema {
   };
   attributes: {
     maxLengthBeforeCollapse: Schema.Attribute.Integer &
-      Schema.Attribute.Required;
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<2>;
     paths: Schema.Attribute.Component<'cms.breadcrumb-path', true> &
       Schema.Attribute.Required;
   };

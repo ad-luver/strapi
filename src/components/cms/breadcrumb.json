@@ -13,7 +13,8 @@
     },
     "maxLengthBeforeCollapse": {
       "type": "integer",
-      "required": true
+      "required": true,
+      "default": 2
     }
   },
   "config": {}
