@@ -1,0 +1,24 @@
+{
+  "kind": "singleType",
+  "collectionName": "sidebar_navigations",
+  "info": {
+    "singularName": "sidebar-navigation",
+    "pluralName": "sidebar-navigations",
+    "displayName": "SidebarNavigation"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": false
+    }
+  },
+  "attributes": {
+    "categories": {
+      "type": "component",
+      "component": "navigation.navigation-category",
+      "repeatable": true
+    }
+  }
+}
