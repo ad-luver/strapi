@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_navigation_navigation_categories",
+  "info": {
+    "displayName": "NavigationCategory"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string",
+      "required": true
+    },
+    "icon": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
+    "items": {
+      "type": "component",
+      "component": "navigation.navigation-item",
+      "repeatable": true,
+      "required": true
+    }
+  },
+  "config": {}
+}

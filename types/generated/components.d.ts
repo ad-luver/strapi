@@ -119,6 +119,32 @@ export interface CmsRichTextParagraph extends Struct.ComponentSchema {
   };
 }
 
+export interface NavigationNavigationCategory extends Struct.ComponentSchema {
+  collectionName: 'components_navigation_navigation_categories';
+  info: {
+    displayName: 'NavigationCategory';
+  };
+  attributes: {
+    icon: Schema.Attribute.Media<'images' | 'files'>;
+    items: Schema.Attribute.Component<'navigation.navigation-item', true> &
+      Schema.Attribute.Required;
+    label: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface NavigationNavigationItem extends Struct.ComponentSchema {
+  collectionName: 'components_navigation_navigation_items';
+  info: {
+    displayName: 'NavigationItem';
+  };
+  attributes: {
+    href: Schema.Attribute.String & Schema.Attribute.Required;
+    icon: Schema.Attribute.Media<'images' | 'files'>;
+    isExternal: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
+    label: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
@@ -131,6 +157,8 @@ declare module '@strapi/strapi' {
       'cms.image': CmsImage;
       'cms.paragraph': CmsParagraph;
       'cms.rich-text-paragraph': CmsRichTextParagraph;
+      'navigation.navigation-category': NavigationNavigationCategory;
+      'navigation.navigation-item': NavigationNavigationItem;
     }
   }
 }

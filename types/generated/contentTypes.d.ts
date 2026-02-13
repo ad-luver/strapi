@@ -486,6 +486,38 @@ export interface ApiDynamicPageDynamicPage extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiHeaderNavigationHeaderNavigation
+  extends Struct.SingleTypeSchema {
+  collectionName: 'header_navigations';
+  info: {
+    displayName: 'HeaderNavigation';
+    pluralName: 'header-navigations';
+    singularName: 'header-navigation';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    categories: Schema.Attribute.Component<
+      'navigation.navigation-category',
+      true
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::header-navigation.header-navigation'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiPrivateSimplePagePrivateSimplePage
   extends Struct.SingleTypeSchema {
   collectionName: 'private_simple_pages';
@@ -519,6 +551,43 @@ export interface ApiPrivateSimplePagePrivateSimplePage
           localized: true;
         };
       }>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiSidebarNavigationSidebarNavigation
+  extends Struct.SingleTypeSchema {
+  collectionName: 'sidebar_navigations';
+  info: {
+    displayName: 'SidebarNavigation';
+    pluralName: 'sidebar-navigations';
+    singularName: 'sidebar-navigation';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: false;
+    };
+  };
+  attributes: {
+    categories: Schema.Attribute.Component<
+      'navigation.navigation-category',
+      true
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::sidebar-navigation.sidebar-navigation'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1036,7 +1105,9 @@ declare module '@strapi/strapi' {
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
       'api::dynamic-page.dynamic-page': ApiDynamicPageDynamicPage;
+      'api::header-navigation.header-navigation': ApiHeaderNavigationHeaderNavigation;
       'api::private-simple-page.private-simple-page': ApiPrivateSimplePagePrivateSimplePage;
+      'api::sidebar-navigation.sidebar-navigation': ApiSidebarNavigationSidebarNavigation;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;

@@ -1,0 +1,30 @@
+{
+  "collectionName": "components_navigation_navigation_items",
+  "info": {
+    "displayName": "NavigationItem"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string",
+      "required": true
+    },
+    "href": {
+      "type": "string",
+      "required": true
+    },
+    "icon": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
+    "isExternal": {
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "config": {}
+}
